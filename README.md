@@ -1,1 +1,1 @@
-# fullpage-screenshot
+# fullpage-screenshots

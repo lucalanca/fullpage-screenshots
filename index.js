@@ -2,12 +2,9 @@ const path = require("path");
 const fs = require("fs-extra");
 const isString = require("lodash.isstring");
 const isObject = require("lodash.isobject");
-const argv = require("yargs").argv;
+
 const puppeteer = require("puppeteer");
 const slugify = require("@sindresorhus/slugify");
-
-const URLS_PATH = path.resolve(__dirname, argv.urls || "urls.json");
-const SCREENSHOTS_FOLDER = path.resolve(__dirname, "screenshots");
 
 const promiseSerial = funcs =>
   funcs.reduce(
@@ -31,9 +28,10 @@ const processItem = item => {
   throw Error("item needs to be either a string or an object");
 };
 
-const captureScreenshots = async () => {
+module.exports = async (urls = [], folder = "screenshots") => {
+  const SCREENSHOTS_FOLDER = path.resolve(__dirname, folder);
+
   await fs.ensureDir(SCREENSHOTS_FOLDER);
-  const urls = await fs.readJson(URLS_PATH);
 
   const browser = await puppeteer.launch();
 
@@ -64,9 +62,3 @@ const captureScreenshots = async () => {
 
   await browser.close();
 };
-
-try {
-  captureScreenshots();
-} catch (e) {
-  console.log("error", e);
-}

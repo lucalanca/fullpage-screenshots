@@ -1,23 +1,25 @@
 {
-  "name": "fullpage-screenshot",
+  "name": "fullpage-screenshots",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "fullpage-screenshots": "cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lucalanca/fullpage-screenshot.git"
+    "url": "git+https://github.com/lucalanca/fullpage-screenshots.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lucalanca/fullpage-screenshot/issues"
+    "url": "https://github.com/lucalanca/fullpage-screenshots/issues"
   },
-  "homepage": "https://github.com/lucalanca/fullpage-screenshot#readme",
+  "homepage": "https://github.com/lucalanca/fullpage-screenshots#readme",
   "dependencies": {
     "@sindresorhus/slugify": "^0.3.0",
     "fs-extra": "^6.0.1",
