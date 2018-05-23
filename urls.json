@@ -1,0 +1,11 @@
+[
+  "https://www.google.com/",
+  {
+    "url": "https://www.nytimes.com/",
+    "folder": "times"
+  },
+  {
+    "url": "https://www.nytimes.com/section/world",
+    "folder": "times"
+  }
+]
